@@ -1,0 +1,30 @@
+{
+  "name": "static",
+  "version": "1.0.0",
+  "description": "Frontend for smart contract timestamp application",
+  "main": "dist.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "webpack serve",
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cloudguruab/ginop.git"
+  },
+  "author": "Adrian Brown @cloudguruab ap.brown011@gmail.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cloudguruab/ginop/issues"
+  },
+  "homepage": "https://github.com/cloudguruab/ginop#readme",
+  "devDependencies": {
+    "@babel/core": "^7.16.5",
+    "@babel/preset-env": "^7.16.5",
+    "babel-loader": "^8.2.3",
+    "html-webpack-plugin": "^5.5.0",
+    "webpack": "^5.65.0",
+    "webpack-cli": "^4.9.1",
+    "webpack-dev-server": "^4.6.0"
+  }
+}
