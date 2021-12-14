@@ -6,6 +6,8 @@ name = "pypi"
 [packages]
 web3 = "*"
 flask = "*"
+psycopg2 = "*"
+sqlalchemy = "*"
 
 [dev-packages]
 
