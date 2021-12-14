@@ -1,4 +1,4 @@
-"""Blueprint configuration for server side"""
+"""configuration for server side"""
 
 import os
 from flask import Flask
