@@ -60,7 +60,7 @@ Ginop provides in memory blockchain for saftey and security. This decision is ba
 
 - WIP
 
-#### Docs (Coming Soon...)
+#### 🌈 Docs (Coming Soon...)
 
 - WIP
 
