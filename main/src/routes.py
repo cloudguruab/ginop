@@ -1,9 +1,9 @@
 import logging, time, json, os, datetime
+from main.src import bp
 from flask import render_template, redirect
-from ..database import models
+
 
 #initial route
-@app.route('/', methods=['GET', 'POST'])
+@bp.route('/', methods=['GET', 'POST'])
 def index():
-    render_template('index.html')
-    
+    return render_template('index.html')    
