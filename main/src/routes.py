@@ -12,13 +12,13 @@ def index():
 def clock_in():
     # time clocked in 
     # nonce generated
-    # transaction is initialized but not completed
-    
+    # transaction is initialized but not completed  
     pass
 
 @bp.route('/clock-out')
 def clock_out():
     # time clocked out 
     # verify nonce exist for specific transaction
+    # read what transactions exists
     # transaction is completed 
     pass
