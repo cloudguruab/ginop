@@ -1,5 +1,5 @@
 import logging, time, json, os, datetime
-from main.src import bp
+from main.main_app import bp
 from flask import render_template, redirect
 from .models import GinopDB
 
