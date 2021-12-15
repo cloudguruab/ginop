@@ -50,15 +50,58 @@ cd main/static && npm install
 - Coming soon...
 
 ## On Chain Platform 
-Ginop provides in memory blockchain for saftey and security. This decision is based on a cost effective approach to implementing smart contract verification. 
+Ginop provides in memory blockchain for saftey and security. This decision is based on a cost effective approach to implementing smart contract verification. The onChain approach to employee workflow will allow self service check-in/check-out stations. This original idea is based on proof of concept and will expand deeper into other implementations such as geospatial, sms, and biometric based proof of concepts.
 
 #### 📱 API (Coming Soon...)
 
-- WIP
+- Our smart contracts will govern our endpoints allowing for new workflows to progress overtime.
+
+```
+#create transaction
+clock-in/ 
+
+#used to sign transaction
+clock-out/ 
+```
 
 #### 👇 Smart Contract (Coming Soon...)
 
-- WIP
+- Here is an example snippet of writing a smart contract using web3.py for more specific visual of our smart contract check the README under `main/README.md`
+
+```python
+import json
+from web3 import Web3
+
+# Set up web3 connection with Ganache
+ganache_url = "http://127.0.0.1:7545"
+web3 = Web3(Web3.HTTPProvider(ganache_url))
+
+# Set a default account to sign transactions - this account is unlocked with Ganache
+web3.eth.defaultAccount = web3.eth.accounts[0]
+
+# Greeter contract ABI
+abi = json.loads('[{"constant":false,"inputs":[{"name":"_greeting","type":"string"}],"name":"setGreeting","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"greet","outputs":[{"name":"","type":"string"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"greeting","outputs":[{"name":"","type":"string"}],"payable":false,"stateMutability":"view","type":"function"},{"inputs":[],"payable":false,"stateMutability":"nonpayable","type":"constructor"}]')
+
+# Greeter contract address - convert to checksum address
+address = web3.toChecksumAddress('') # FILL ME IN
+
+# Initialize contract
+contract = web3.eth.contract(address=address, abi=abi)\
+
+# Read the default greeting
+print(contract.functions.greet().call())
+
+# Set a new greeting
+tx_hash = contract.functions.setGreeting('HEELLLLOOOOOO!!!').transact()
+
+# Wait for transaction to be mined
+web3.eth.waitForTransactionReceipt(tx_hash)
+
+# Display the new greeting value
+print('Updated contract greeting: {}'.format(
+    contract.functions.greet().call()
+))
+```
 
 #### 🌈 Docs (Coming Soon...)
 
