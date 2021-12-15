@@ -17,4 +17,4 @@ class Config(object):
     
     ONCHAIN_PRIVATE_KEY = None
     
-    
+    SQLALCHEMY_TRACK_MODIFICATIONS = False
