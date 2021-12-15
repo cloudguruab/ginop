@@ -9,7 +9,7 @@ class Config(object):
 
     SECRET_KEY = os.environ.get('SECRET_KEY')
     
-    DATABASE = None
+    DATABASE = os.environ.get('DATABASE')
     
     SIGNATURE = None
     
