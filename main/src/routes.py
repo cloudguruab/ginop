@@ -1,7 +1,7 @@
 import logging, time, json, os, datetime
 from main.src import bp
 from flask import render_template, redirect
-
+from .models import GinopDB
 
 #initial route
 @bp.route('/', methods=['GET', 'POST'])
