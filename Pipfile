@@ -9,6 +9,7 @@ flask = "*"
 psycopg2 = "*"
 sqlalchemy = "*"
 python-dotenv = "*"
+pytest = "*"
 
 [dev-packages]
 
