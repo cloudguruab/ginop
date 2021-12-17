@@ -11,6 +11,8 @@ class Config(object):
     
     DATABASE = os.environ.get('DATABASE')
     
+    # PATH= None
+    
     SIGNATURE = None
     
     GANACHE_URL = None 
