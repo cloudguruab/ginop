@@ -1,21 +1,16 @@
 import logging, time, json, os, datetime
-import logging.config
 from main.main_app import bp
 from flask import render_template, redirect
 from .models import GinopDB
 
-# log_file_path = os.path.join()
-# logging.config.fileConfig('logging.conf')
-
-# create logger
-# logger = logging.getLogger('main_logger')
+logger = logging.getLogger(__name__)
 
 # 'application' code
-# logger.debug('debug message')
-# logger.info('info message')
-# logger.warning('warn message')
-# logger.error('error message')
-# logger.critical('critical message')
+logger.debug('debug message')
+logger.info('info message')
+logger.warning('warn message')
+logger.error('error message')
+logger.critical('critical message')
 
 
 #initial route
