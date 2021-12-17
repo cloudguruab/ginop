@@ -45,7 +45,7 @@ pipenv install .
 cd main/static && npm install 
 ```
 
-## 🔨 Usage
+## 🔨 Usage (Coming soon...)
 
 - Coming soon...
 
@@ -109,3 +109,6 @@ print('Updated contract greeting: {}'.format(
 
 ## 🔗 Links
 - [Home page](https://usesource.app/)
+- [What is the blockchain](https://kauri.io/#communities/Getting%20started%20with%20dapp%20development/blockchain-explained/)
+- [What is a smart contract](https://kauri.io/#collections/Ethereum%20101/ethereum-101-part-5-the-smart-contract/)
+
