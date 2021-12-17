@@ -11,6 +11,7 @@ sqlalchemy = "*"
 python-dotenv = "*"
 pytest = "*"
 flask-sqlalchemy = "*"
+pyyaml = "*"
 
 [dev-packages]
 
