@@ -60,7 +60,7 @@ Ginop provides in memory blockchain for saftey and security. This decision is ba
 #create transaction
 clock-in/ 
 
-#used to sign transaction
+#sign transaction
 clock-out/ 
 ```
 
