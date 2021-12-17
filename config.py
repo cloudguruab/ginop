@@ -9,7 +9,7 @@ class Config(object):
 
     SECRET_KEY = os.environ.get('SECRET_KEY')
     
-    DATABASE = None
+    DATABASE = os.environ.get('DATABASE')
     
     SIGNATURE = None
     
@@ -17,4 +17,4 @@ class Config(object):
     
     ONCHAIN_PRIVATE_KEY = None
     
-    
+    SQLALCHEMY_TRACK_MODIFICATIONS = False
