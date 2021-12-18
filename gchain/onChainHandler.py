@@ -6,6 +6,13 @@ import os
 
 load_dotenv()
 
+#handler is responsible for 
+# admin settings
+# connecting to blockchain
+# establishing root behavior for transactions
+# establishing root behavior for reading blocks
+# establishing root behavior for writing contract
+
 class Admin:
     
     def __init__(self, name:str):
