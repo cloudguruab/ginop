@@ -45,3 +45,23 @@ class Admin:
         Depending on admin level will delegate ipc init
         """
         pass
+    
+class Permission(Admin):
+    
+    def __init__(self):
+        pass
+    
+    def __repr__(self):
+        pass
+    
+    def __str__(self):
+        pass
+    
+    def readPermission(self):
+        pass
+    
+    def writePermission(self):
+        pass
+    
+    def transactPermission(self):
+        pass
