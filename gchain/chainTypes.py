@@ -23,7 +23,6 @@ class AdminTypes:
     name: user identifier for admin using ginop system
     admin_type: chain level permission of admin
     """
-    
     name:str
     admin_type:str
     level:int 
