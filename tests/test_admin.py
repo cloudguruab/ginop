@@ -10,3 +10,8 @@ class TestChain:
     def teardown_method(self):
         pass
     
+    def test_admin_profile_connected_to_blockchain(self):
+        pass
+    
+    def test_admin_profile_disconnected_to_blockchain(self):
+        pass

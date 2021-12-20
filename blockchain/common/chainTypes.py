@@ -1,8 +1,8 @@
 """types for ginop blockchain logic"""
 
-class Types:
+class ChainTypes:
     """
-    ginop configuration for blockchain types
+    configuration for blockchain types
     
     g_url: url for lcoal development chain ginop runs on
     chain_address_one: on chain address for sender or receiver of transaction
@@ -15,3 +15,5 @@ class Types:
     chain_address_two:str
     gtx:dict
     hash:str
+
+    
