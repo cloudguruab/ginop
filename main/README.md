@@ -1,6 +1,6 @@
 # Ginop Blockchain
 
-- Here you can access the onchain platform inside `gchain`.
+- Here you can access the onchain platform inside `blockchain/`.
 
 Example snippet
 
