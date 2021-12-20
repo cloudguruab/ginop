@@ -27,7 +27,7 @@ Managing workflows can be time consuming. Most managers find approving employee 
 
 ## 💅 Features
 
-- 🚀 Dummy proof API for handling common workflows
+- 🚀 API for handling common workflows
 - 🛡 Easily manage employee data
 - 🚀 Equipped with an in memory on chain cryptographic verficiation system
 - 🛡 Built-in protection for workflow duplication
