@@ -2,8 +2,7 @@ from web3 import Web3
 from common.constants import MetaFormat
 import json
 
-
-#handler is responsible for 
+# handler is responsible for 
 # admin settings
 # connecting to blockchain
 # establishing root behavior for transactions
@@ -33,7 +32,7 @@ class Admin:
         
         if state.isConnected(): 
             # print(f'{http_provider} is connected...') #log something
-            return state
+            return True
         
         return False 
     
@@ -50,6 +49,7 @@ class Admin:
                 "permission_level": self.admin_level,
                 "state": "connected..."
             } 
+        
         return {
             "admin": self.name,
             "permission_level": self.admin_level,
@@ -59,20 +59,49 @@ class Admin:
 
 class Permission(Admin):
     
-    def __init__(self):
-        pass
+    def __init__(self, name, admin_level):
+        super().__init__(name, admin_level)
+        self.stats = Admin.admin_conf(self)
     
     def __repr__(self):
-        pass
+        return "<Permission: %s>" % self.admin_level
     
     def __str__(self):
-        pass
+        return "<Permission: %s>" % self.admin_level
     
-    def readPermission(self):
-        pass
+    def readPermission(self): #TODO: -> need to add db and READING smart contract functionality
+        permission_level = self.stats["permission_level"]
+        state = self.stats["state"]
+        
+        if state == "connected...":
+            if permission_level == "admin":
+                print('You have root level privledges')
+            elif permission_level == "tenant": 
+                print("You have read and some write access")
+        else:
+            print("No connection present")
     
-    def writePermission(self):
-        pass
+    def writePermission(self): #TODO: -> need to add db and WRITING smart contract functionality
+        permission_level = self.stats["permission_level"]
+        state = self.stats["state"]
+        
+        if state == "connected...":
+            if permission_level == "admin":
+                print('You have root level privledges')
+            elif permission_level == "tenant": 
+                print("You have read and some write access")
+        else:
+            print("No connection present")
     
-    def transactPermission(self):
-        pass
+    def transactPermission(self): #TODO: -> need to add db and SIGNING smart contract functionality
+        permission_level = self.stats["permission_level"]
+        state = self.stats["state"]
+        
+        if state == "connected...":
+            if permission_level == "admin":
+                print('You have root level privledges')
+            elif permission_level == "tenant": 
+                print("You have read and some write access")
+        else:
+            print("No connection present")
+    
