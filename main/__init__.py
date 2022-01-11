@@ -26,6 +26,5 @@ def create_app(config_class=Config):
     from main.main_app import bp as main_bp
     app.register_blueprint(main_bp)
         
-    logger.info('ginop boot complete...')
     return app
 
