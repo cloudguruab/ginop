@@ -16,4 +16,12 @@ class ChainTypes:
     gtx:dict
     hash:str
 
-    
+class PrivateTypes:
+    """
+    WIP
+    """
+    index: str
+    tsx: str
+    timestamp: str
+    previous_hash: str
+    nonce: int

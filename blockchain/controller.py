@@ -9,6 +9,8 @@ import json
 # establishing root behavior for reading blocks
 # establishing root behavior for writing contract
 
+
+#FIXME: refactor all this as public connectors to public chains for ginop
 class Admin:
     
     def __init__(self, name:str, admin_level:str):
