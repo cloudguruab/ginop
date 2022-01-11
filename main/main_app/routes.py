@@ -5,14 +5,6 @@ from .models import GinopDB
 
 logger = logging.getLogger(__name__)
 
-# 'application' code
-logger.debug('debug message')
-logger.info('info message')
-logger.warning('warn message')
-logger.error('error message')
-logger.critical('critical message')
-
-
 #initial route
 @bp.route('/', methods=['GET', 'POST'])
 def index():
