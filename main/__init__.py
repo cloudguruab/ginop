@@ -16,12 +16,6 @@ def create_app(config_class=Config):
     except OSError:
         logger.info("instance folder %s already exist" % app.instance_path)
         pass
-    
-    from .main_app.models import db as gdb
-    with app.app_context():
-        current_app.config['SQLALCHEMY_DATABASE_URI'] = config_class.DATABASE
-        gdb.init_app(app)
-        gdb.create_all()
 
     from main.main_app import bp as main_bp
     app.register_blueprint(main_bp)
