@@ -1,9 +1,9 @@
 import logging, time, json, os, datetime
 from main.main_app import bp
 from flask import render_template, redirect
+import os.path, sys
 
-import sys
-sys.path.append('../../mydirectory')
+sys.path.append(os.path.join(os.path.dirname(os.path.realpath(__file__)), os.pardir))
 from blockchain.private import chain
 
 logger = logging.getLogger(__name__)
