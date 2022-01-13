@@ -1,4 +1,7 @@
-# usr/bin/python3
+"""
+Proof of work blockchain for ginop api. This is a template for a standard 
+blockchain implementation and not the final engine for ginop api. 
+"""
 
 from hashlib import sha256
 import json
@@ -13,7 +16,7 @@ class Block:
         self.previous_hash = previous_hash
         self.nonce = nonce
     
-    def compute_hash():
+    def compute_hash(self):
         block_string = json.dumps(self.__dict__, sort_keys=True)
         return sha256(block_string.encode()).hexdigest()
     

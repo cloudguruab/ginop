@@ -18,7 +18,7 @@ class ChainTypes:
 
 class PrivateTypes:
     """
-    WIP
+    WIP -> #TODO: Edit backend domains/organize and refactor
     """
     index: str
     tsx: str
