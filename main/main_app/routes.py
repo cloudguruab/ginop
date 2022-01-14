@@ -21,18 +21,22 @@ def private_chain():
         chain_data.append(block.__dict__)
     return json.dumps({"length": len(chain_data),
                        "chain": chain_data})
+    
+@bp.route('/register', methods=['GET', 'POST'])
+def register():
+    pass
 
-@bp.route('/clock-in', methods=[''])
-def clock_in():
+# @bp.route('/clock-in', methods=[''])
+# def clock_in():
     # time clocked in 
     # nonce generated
     # transaction is initialized but not completed  
-    pass
+#     pass
 
-@bp.route('/clock-out')
-def clock_out():
+# @bp.route('/clock-out')
+# def clock_out():
     # time clocked out 
     # verify nonce exist for specific transaction
     # read what transactions exists
     # transaction is completed 
-    pass
+#     pass
