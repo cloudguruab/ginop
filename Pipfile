@@ -5,14 +5,13 @@ name = "pypi"
 
 [packages]
 web3 = "*"
-flask = "*"
 psycopg2 = "*"
 sqlalchemy = "*"
 python-dotenv = "*"
 pytest = "*"
-flask-sqlalchemy = "*"
 pyyaml = "*"
-flask-wtf = "*"
+django = "*"
+djangorestframework = "*"
 
 [dev-packages]
 
