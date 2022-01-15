@@ -21,4 +21,3 @@ from django.db import models
 #     # sms = bool 
 #     # biometric = bool
 #     pass
-    

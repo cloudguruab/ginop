@@ -1,7 +1,6 @@
 """configuration class for application"""
 
 import os  
-from pathlib import Path
 
 class Config(object):
 
@@ -11,7 +10,7 @@ class Config(object):
     
     DATABASE = os.environ.get('DATABASE')
     
-    PATH = Path(__file__).resolve().parent.parent
+    # PATH = 
     
     SIGNATURE = None
     
