@@ -6,12 +6,14 @@ from ..dev.blockchain import chain
 from ..dev.common.exceptions import FailedChainEventExeception
 from .schema import UserSerializer
 from rest_framework.views import APIView
+from rest_framework.response import Response
+from rest_framework import status
 
 
 blockchain = chain.Blockchain()
 
+
 class UserView(viewsets.ModelViewSet):
-    #NOTE: make this your clock in and out endpoints 
     """
     Endpoint that allows users to be viewed or edisted
     """
@@ -23,22 +25,24 @@ class PrivateChainView(APIView):
     """
     Example endpoint for handling actions on the private chain.
     """
-    pass
+        
+    def get(self, request, format=None, *args, **kwargs):
+        chain_data = []
+        
+        for block in blockchain.chain:
+            chain_data.append(block.__dict__)
+        
+        context = json.dumps({"length": len(chain_data),
+                        "chain": chain_data})
+        
+        return Response(context, status=status.HTTP_200_OK)
+
 
 class PublicChainView(APIView):
     """
     Endpoint for example scripts usable on a public chain like etherium, gananche, or others. 
     """
     pass
-
-
-# @bp.route('/chain', methods=['GET'])
-# def private_chain():
-#     chain_data = []
-#     for block in blockchain.chain:
-#         chain_data.append(block.__dict__)
-#     return json.dumps({"length": len(chain_data),
-#                        "chain": chain_data})
 
 
 #write your own custom endpoints below.
