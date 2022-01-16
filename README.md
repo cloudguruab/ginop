@@ -40,10 +40,6 @@ Ginop provides a wrapper around a proof of work chain and public-chain connector
 pipenv install .
 ```
 
-```bash
-cd main/static && npm install 
-```
-
 ## 🔨 Usage (Coming soon...)
 
 - Coming soon...
