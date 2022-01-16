@@ -4,17 +4,19 @@ blockchain implementation and not the final engine for ginop api.
 """
 
 from hashlib import sha256
+from ..common.constants import MetaFormat
+from ..common.chainTypes import BlockTypes, ChainTypes
 import json
 import time
 
 class Block:
     
     def __init__(self, index, transactions, timestamp, previous_hash, nonce=0):
-        self.index = index
-        self.transactions = transactions
-        self.timestamp = timestamp
-        self.previous_hash = previous_hash
-        self.nonce = nonce
+        self.index: BlockTypes.index = index
+        self.transactions: BlockTypes.transactions = transactions
+        self.timestamp: BlockTypes.timestamp = timestamp
+        self.previous_hash: BlockTypes.previous_hash = previous_hash
+        self.nonce: BlockTypes.nonce = nonce
     
     def compute_hash(self):
         block_string = json.dumps(self.__dict__, sort_keys=True)
@@ -22,11 +24,9 @@ class Block:
     
 class Blockchain:
     
-    difficulty = 2
-
     def __init__(self):
-        self.unconfirmed_transactions = []
-        self.chain = []
+        self.unconfirmed_transactions: ChainTypes.unconfirmed_transactions = []
+        self.chain: ChainTypes.chain = []
         self.create_genesis_block()
  
     def create_genesis_block(self):
@@ -41,14 +41,14 @@ class Blockchain:
     def proof_of_work(self, block):
         block.nonce = 0
         computed_hash = block.compute_hash()
-        while not computed_hash.startswith('0' * Blockchain.difficulty):
+        while not computed_hash.startswith('0' * Blockchain.MetaFormat.DIFFICULTY):
             block.nonce += 1
             computed_hash = block.compute_hash()
         return computed_hash
     
     def add_block(self, block, proof):
         previous_hash = self.last_block.hash
-        if previous_hash != block.previous_hash:
+        if previous_hash != block.previous_hash: 
             return False
         if not self.is_valid_proof(block, proof):
             return False
@@ -57,7 +57,7 @@ class Blockchain:
         return True
     
     def is_valid_proof(self, block, block_hash):
-        return (block_hash.startswith('0' * Blockchain.difficulty) and
+        return (block_hash.startswith('0' * Blockchain.MetaFormat.DIFFICULTY) and
                 block_hash == block.compute_hash())
 
     def add_new_transaction(self, transaction):

@@ -4,10 +4,10 @@
 
 </p>
 
-<h1 align="center">Blockchain based workflow identifier.</h1>
+<h1 align="center">Blockchain based service library for api's</h1>
 
 <div align="center">
-A libaray that allows workflows to manage themselves
+A libaray that allows your own custom api to thrive
 </div>
 
   <p align="center">
@@ -23,16 +23,16 @@ A libaray that allows workflows to manage themselves
   </p>
   
 ## 📦 Why
-Managing workflows can be time consuming. Most managers find approving employee logs, times and pay a little more challenging to maintain over time. This solution is built to develop a web3 approach to a real world workflow problem. An idea inspired by <a href="https://github.com/usesource/">The Source Project</a> I was able to bring smart contract approval to a simple workflow environment. 
+Wanting to get involved with blockchain but not knowing where to start can be tiring. Ginop provides a solution to developers by allowing you to implement your own custom api using this framework with an established, and fully integrated private-chain or use public-chain connectors. This solution is built to develop a web3 approach to a real world workflow problem. An idea inspired by <a href="https://github.com/usesource/">The Source Project</a> I was able to bring private chain and public chain connectors together. 
 
 ## 💅 Features
 
-- 🚀 API for handling common workflows
-- 🛡 Easily manage employee data
-- 🚀 Equipped with an in memory on chain cryptographic verficiation system
-- 🛡 Built-in protection for workflow duplication
-- 🚀 Easy to set up and integrate
-- 🛡 Written in Python, Javascript, and sprinkled with a little React
+- 🚀 API for handling common workflows with whatever you want on your own chain.
+- 🛡 Easily manage your service provider, chain events or api.
+- 🚀 Equipped with an in memory on-chain cryptographic verficiation system using group consesus.
+- 🛡 Built-in protection for workflow duplication.
+- 🚀 Easy to set up and integrate. 
+- 🛡 Written in Python.
 
 
 ## 👨‍💻 Install
@@ -50,57 +50,45 @@ cd main/static && npm install
 - Coming soon...
 
 ## On Chain Platform 
-Ginop provides in memory blockchain for saftey and security. This decision is based on a cost effective approach to implementing smart contract verification. The onChain approach to employee workflow will allow self service check-in/check-out stations. This original idea is based on proof of concept and will expand deeper into other implementations such as geospatial, sms, and biometric based proof of concepts.
+Ginop provides in memory blockchain for saftey and security. This decision is based on a cost effective approach to implementing smart contract verification. The onChain approach to web3 workflow will allow self service into your own private chain. This original idea is based on proof of work and will expand deeper into other implementations such as geospatial, sms, and biometric based proof of concepts.
 
 #### 📱 API (Coming Soon...)
 
 - Our smart contracts will govern our endpoints allowing for new workflows to progress overtime.
 
+```python
+class UserView(viewsets.ModelViewSet):
+    """
+    Endpoint that allows users to be viewed or edisted
+    """
+    queryset = User.objects.all().order_by('-date_joined')
+    serializer_class = UserSerializer
+    permission_classes = [permissions.IsAuthenticated]
 ```
-#create transaction
-clock-in/ 
 
-#sign transaction
-clock-out/ 
+#### 🦄 Blocks
+
+Here is a snippet of the blocks.
+
+```python
+class Block:
+    
+    def __init__(self, index, transactions, timestamp, previous_hash, nonce=0):
+        self.index: BlockTypes.index = index
+        self.transactions: BlockTypes.transactions = transactions
+        self.timestamp: BlockTypes.timestamp = timestamp
+        self.previous_hash: BlockTypes.previous_hash = previous_hash
+        self.nonce: BlockTypes.nonce = nonce
+    
+    def compute_hash(self):
+        block_string = json.dumps(self.__dict__, sort_keys=True)
+        return sha256(block_string.encode()).hexdigest()
 ```
 
 #### 👇 Smart Contract (Coming Soon...)
 
-- Here is an example snippet of writing a smart contract using web3.py for more specific visual of our smart contract check the README under `main/README.md`
-
 ```python
-import json
-from web3 import Web3
-
-# Set up web3 connection with Ganache
-ganache_url = "http://127.0.0.1:7545"
-web3 = Web3(Web3.HTTPProvider(ganache_url))
-
-# Set a default account to sign transactions - this account is unlocked with Ganache
-web3.eth.defaultAccount = web3.eth.accounts[0]
-
-# Greeter contract ABI
-abi = json.loads('[{"constant":false,"inputs":[{"name":"_greeting","type":"string"}],"name":"setGreeting","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"greet","outputs":[{"name":"","type":"string"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"greeting","outputs":[{"name":"","type":"string"}],"payable":false,"stateMutability":"view","type":"function"},{"inputs":[],"payable":false,"stateMutability":"nonpayable","type":"constructor"}]')
-
-# Greeter contract address - convert to checksum address
-address = web3.toChecksumAddress('') # FILL ME IN
-
-# Initialize contract
-contract = web3.eth.contract(address=address, abi=abi)\
-
-# Read the default greeting
-print(contract.functions.greet().call())
-
-# Set a new greeting
-tx_hash = contract.functions.setGreeting('HEELLLLOOOOOO!!!').transact()
-
-# Wait for transaction to be mined
-web3.eth.waitForTransactionReceipt(tx_hash)
-
-# Display the new greeting value
-print('Updated contract greeting: {}'.format(
-    contract.functions.greet().call()
-))
+WIP
 ```
 
 #### 🌈 Docs (Coming Soon...)
