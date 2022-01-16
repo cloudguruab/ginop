@@ -10,7 +10,7 @@ class UserSerializer(serializers.ModelSerializer):
 class ChainEventsSerializer(serializers.ModelSerializer):
     class Meta: 
         model = ChainEventsModel
-        fields = ['index', 'previous_hash', 'current_hash']
+        fields = ['index', 'previous_hash', 'curr_hash']
     
 
 #add your own custom serializers for new schema models below.
