@@ -41,7 +41,7 @@ class Blockchain:
     def proof_of_work(self, block):
         block.nonce = 0
         computed_hash = block.compute_hash()
-        while not computed_hash.startswith('0' * Blockchain.MetaFormat.DIFFICULTY):
+        while not computed_hash.startswith('0' * MetaFormat.DIFFICULTY):
             block.nonce += 1
             computed_hash = block.compute_hash()
         return computed_hash

@@ -1,4 +1,5 @@
 from ..api.dev.blockchain import chain
+from ..api.dev.common import constants
 import time
 import json
 from hashlib import sha256
@@ -23,9 +24,18 @@ class TestBlockchain:
         assert chain_vector
         assert isinstance(self.genesis_block, object)
         
-    def test_proof_of_work(sefl):
-        pass
-    
+    def test_proof_of_work(self):
+        nonce = 0
+        targeted_hash = self.genesis_block.compute_hash()
+        assert constants.MetaFormat.DIFFICULTY == 2
+        
+        while not targeted_hash.startswith('0' * 2):
+            nonce += 1
+            targeted_hash = self.genesis_block.compute_hash()
+        
+        print(targeted_hash)
+        assert targeted_hash
+        
     def test_add_block(self):
         pass
     
