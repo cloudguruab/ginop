@@ -4,10 +4,10 @@
 
 </p>
 
-<h1 align="center">Blockchain based service library for api's</h1>
+<h1 align="center">Blockchain based service wrapper</h1>
 
 <div align="center">
-A libaray that allows your own custom api to thrive
+A wrapper built around django. 
 </div>
 
   <p align="center">
@@ -23,14 +23,13 @@ A libaray that allows your own custom api to thrive
   </p>
   
 ## 📦 Why
-Wanting to get involved with blockchain but not knowing where to start can be tiring. Ginop provides a solution to developers by allowing you to implement your own custom api using this framework with an established, and fully integrated private-chain or use public-chain connectors. This solution is built to develop a web3 approach to a real world workflow problem. An idea inspired by <a href="https://github.com/usesource/">The Source Project</a> I was able to bring private chain and public chain connectors together. 
+Ginop provides a wrapper around a proof of work chain and public-chain connector to allow for your own custom service implementations on the blockchain in django. An idea inspired by <a href="https://github.com/usesource/">The Source Project</a> I was able to bring private chain and public chain connectors together. 
 
 ## 💅 Features
 
-- 🚀 API for handling common workflows with whatever you want on your own chain.
+- 🚀 API built on top of a blockchain.
 - 🛡 Easily manage your service provider, chain events or api.
-- 🚀 Equipped with an in memory on-chain cryptographic verficiation system using group consesus.
-- 🛡 Built-in protection for workflow duplication.
+- 🚀 Equipped with an proof of work chain and public chain connector.
 - 🚀 Easy to set up and integrate. 
 - 🛡 Written in Python.
 

@@ -8,7 +8,6 @@ from .schema import UserSerializer
 from rest_framework.views import APIView
 
 
-# logger = logging.getLogger(__name__) NOTE: config logger
 blockchain = chain.Blockchain()
 
 class UserView(viewsets.ModelViewSet):

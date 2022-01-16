@@ -24,7 +24,7 @@ class Controller:
         state = MetaFormat.HTTP_PROVIDER.value
         
         if state.isConnected(): 
-            print(f'{http_provider} is connected...') #log something
+            print(f'{http_provider} is connected...')
             return True
         
         return False 
