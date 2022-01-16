@@ -1,13 +1,15 @@
-# from wtforms import Form, BooleanField, StringField, PasswordField, validators
+from django.contrib.auth.models import User
+from .models import ChainEventsModel
+from rest_framework import serializers
 
-# class AuthForm(Form): #TODO:
-#     username = StringField('Username', [validators.Length(min=8, max=25)])
-#     password = PasswordField('New Password', [
-#         validators.DataRequired(),
-#         validators.EqualTo('confirm', message='Passwords must match')
-#     ])
-#     confirm = PasswordField('Repeat Password')
-#     # accept_tos = BooleanField('I accept the TOS', [validators.DataRequired()])
-
-# class ChainEventsForm(Form):
-#     pass
+class UserSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = User
+        fields = ['username', 'email']
+        
+class ChainEventsSerializer(serializers.ModelSerializer):
+    class Meta: 
+        model = ChainEventsModel
+        pass
+    
+    pass #TODO:
