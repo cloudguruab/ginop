@@ -4,6 +4,7 @@ blockchain implementation and not the final engine for ginop api.
 """
 
 from hashlib import sha256
+from ..common.constants import MetaFormat
 import json
 import time
 
@@ -22,8 +23,6 @@ class Block:
     
 class Blockchain:
     
-    difficulty = 2
-
     def __init__(self):
         self.unconfirmed_transactions = []
         self.chain = []
@@ -41,7 +40,7 @@ class Blockchain:
     def proof_of_work(self, block):
         block.nonce = 0
         computed_hash = block.compute_hash()
-        while not computed_hash.startswith('0' * Blockchain.difficulty):
+        while not computed_hash.startswith('0' * Blockchain.MetaFormat.DIFFICULTY):
             block.nonce += 1
             computed_hash = block.compute_hash()
         return computed_hash
@@ -57,7 +56,7 @@ class Blockchain:
         return True
     
     def is_valid_proof(self, block, block_hash):
-        return (block_hash.startswith('0' * Blockchain.difficulty) and
+        return (block_hash.startswith('0' * Blockchain.MetaFormat.DIFFICULTY) and
                 block_hash == block.compute_hash())
 
     def add_new_transaction(self, transaction):

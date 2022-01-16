@@ -1,27 +1,35 @@
 """types for ginop blockchain logic"""
 
-class ChainTypes:
+class BlockTypes:
     """
-    configuration for blockchain types
+    configuration for blockchain block types
     
-    g_url: url for lcoal development chain ginop runs on
-    chain_address_one: on chain address for sender or receiver of transaction
-    chain_address_two: on chain address for sender or receiver of transaction
-    gtx: transaction object for chain address connections
+    index: marker for block instances on chain.
+    transactions: list of transactions for the chain.
+    timestamp: epoch instance for current timestamp of the following chain.
+    previous_hash: last hash for most recent block on the chain.
+    nonce: arbitrary number when joined with block data forms the hash.
     hash: used for grabbing specifc transactions off a particular block
     """
-    g_url:str
-    chain_address_one:str
-    chain_address_two:str
-    gtx:dict
-    hash:str
+    index: float or int
+    transactions: list
+    timestamp: float
+    previous_hash: int or float
+    nonce: int or float
+    
+class ChainTypes:
+    pass
 
 class PrivateTypes:
     """
-    WIP -> #TODO: Edit backend domains/organize and refactor
+    configuration for private chain 
+
     """
     index: str
     tsx: str
     timestamp: str
     previous_hash: str
     nonce: int
+    
+class ControllerTypes:
+    pass
