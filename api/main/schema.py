@@ -1,6 +1,6 @@
 from django.contrib.auth.models import User
-from .models import ChainEventsModel
 from rest_framework import serializers
+from .models import ChainEventsModel
 
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
@@ -10,8 +10,7 @@ class UserSerializer(serializers.ModelSerializer):
 class ChainEventsSerializer(serializers.ModelSerializer):
     class Meta: 
         model = ChainEventsModel
-        pass
+        fields = ['index', 'previous_hash', 'current_hash']
     
-    pass 
 
 #add your own custom serializers for new schema models below.
