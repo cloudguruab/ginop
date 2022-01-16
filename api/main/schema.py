@@ -12,4 +12,6 @@ class ChainEventsSerializer(serializers.ModelSerializer):
         model = ChainEventsModel
         pass
     
-    pass #TODO:
+    pass 
+
+#add your own custom serializers for new schema models below.

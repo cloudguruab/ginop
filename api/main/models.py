@@ -16,4 +16,6 @@ class ChainEventsModel(models.Model):
     # geospacial = bool  
     # sms = bool 
     # biometric = bool
-    pass #TODO:
+    pass
+
+#write your own custom models below if needed.
