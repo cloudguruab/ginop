@@ -23,5 +23,17 @@ class TestBlockchain:
         assert chain_vector
         assert isinstance(self.genesis_block, object)
         
+    def test_proof_of_work(sefl):
+        pass
     
+    def test_add_block(self):
+        pass
     
+    def test_is_valid_proof(self):
+        pass
+    
+    def test_add_new_transactions(self):
+        pass
+    
+    def test_mine(self):
+        pass
