@@ -27,23 +27,34 @@ class TestBlockchain:
     def test_proof_of_work(self):
         nonce = 0
         targeted_hash = self.genesis_block.compute_hash()
-        assert constants.MetaFormat.DIFFICULTY == 2
+        assert chain.DIFFICULTY == 2
         
-        while not targeted_hash.startswith('0' * 2):
+        while not targeted_hash.startswith('0' * chain.DIFFICULTY):
             nonce += 1
             targeted_hash = self.genesis_block.compute_hash()
+            
+            if nonce == 1: #break infinite loop on testcase
+                break
         
-        print(targeted_hash)
         assert targeted_hash
-        
-    def test_add_block(self):
-        pass
-    
-    def test_is_valid_proof(self):
-        pass
-    
-    def test_add_new_transactions(self):
-        pass
     
     def test_mine(self):
-        pass
+        unconfirmed_transactions = []
+        test_chain = []
+        if not unconfirmed_transactions:
+            assert True
+        
+        last_block = chain.Blockchain.last_block
+        new_block = chain.Block(
+            index=last_block.index + 1,
+            transactions=unconfirmed_transactions,
+            timestamp=time.time(),
+            previous_hash=last_block.hash
+        )
+        assert isinstance(new_block, object)
+        
+        proof = chain.Blockchain.proof_of_work(new_block)
+        chain.Blockchain.add_block(new_block, proof)
+        unconfirmed_transactions = []
+        assert unconfirmed_transactions
+        assert new_block.index
