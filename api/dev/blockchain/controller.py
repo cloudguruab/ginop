@@ -1,13 +1,7 @@
-# from web3 import Web3
-# from common.constants import MetaFormat
-# import json
+"""handler for connecting to different providers"""
 
-# handler is responsible for 
-# admin settings
-# connecting to blockchain
-# establishing root behavior for transactions
-# establishing root behavior for reading blocks
-# establishing root behavior for writing contract
+from web3 import Web3
+from ..common.constants import MetaFormat
 
 
 class Controller:
@@ -17,10 +11,8 @@ class Controller:
         configuration of connector instance
         
         :param name: identifier of admin interface
-        :param admin_level: permission identifier for users
         """
         self.name = name
-        self.admin_level = admin_level
         
     def __repr__(self):
         return f'<Admin: {self.name} >'
@@ -39,8 +31,7 @@ class Controller:
     
     def est_conf(self):
         """
-        depending on admin level will delegate provider type,
-        grab provider and check against admin level.
+        will delegate provider type,.
         
         :rtype profile: dict object for frontend meta data rendered to user
         """

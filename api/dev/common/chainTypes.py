@@ -18,18 +18,26 @@ class BlockTypes:
     nonce: int or float
     
 class ChainTypes:
-    pass
-
+    """
+    configuration for blockchain types.
+    
+    unconfirmed_transactions: list or non-verified transactions on chain
+    chain: blockchain vector
+    """
+    unconfirmed_transactions: list
+    chain: list
+    
 class PrivateTypes:
     """
     configuration for private chain 
 
     """
-    index: str
-    tsx: str
-    timestamp: str
-    previous_hash: str
-    nonce: int
+    pass
     
 class ControllerTypes:
-    pass
+    """
+    configuration for Controller
+    
+    name: identifier for linked tenant on api
+    """
+    name: str

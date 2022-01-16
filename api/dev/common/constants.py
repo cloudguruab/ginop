@@ -1,9 +1,6 @@
 from web3 import Web3
 from enum import Enum
-from dotenv import load_dotenv
 import os
-
-load_dotenv()
 
 class MetaFormat(Enum):
     DIFFICULTY = 2

@@ -5,17 +5,18 @@ blockchain implementation and not the final engine for ginop api.
 
 from hashlib import sha256
 from ..common.constants import MetaFormat
+from ..common.chainTypes import BlockTypes, ChainTypes
 import json
 import time
 
 class Block:
     
     def __init__(self, index, transactions, timestamp, previous_hash, nonce=0):
-        self.index = index
-        self.transactions = transactions
-        self.timestamp = timestamp
-        self.previous_hash = previous_hash
-        self.nonce = nonce
+        self.index: BlockTypes.index = index
+        self.transactions: BlockTypes.transactions = transactions
+        self.timestamp: BlockTypes.timestamp = timestamp
+        self.previous_hash: BlockTypes.previous_hash = previous_hash
+        self.nonce: BlockTypes.nonce = nonce
     
     def compute_hash(self):
         block_string = json.dumps(self.__dict__, sort_keys=True)
@@ -24,8 +25,8 @@ class Block:
 class Blockchain:
     
     def __init__(self):
-        self.unconfirmed_transactions = []
-        self.chain = []
+        self.unconfirmed_transactions: ChainTypes.unconfirmed_transactions = []
+        self.chain: ChainTypes.chain = []
         self.create_genesis_block()
  
     def create_genesis_block(self):
@@ -47,7 +48,7 @@ class Blockchain:
     
     def add_block(self, block, proof):
         previous_hash = self.last_block.hash
-        if previous_hash != block.previous_hash:
+        if previous_hash != block.previous_hash: 
             return False
         if not self.is_valid_proof(block, proof):
             return False
