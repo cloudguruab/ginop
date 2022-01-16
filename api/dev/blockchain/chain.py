@@ -9,6 +9,8 @@ from ..common.chainTypes import BlockTypes, ChainTypes
 import json
 import time
 
+DIFFICULTY: int = 2
+
 class Block:
     
     def __init__(self, index, transactions, timestamp, previous_hash, nonce=0):
@@ -41,7 +43,7 @@ class Blockchain:
     def proof_of_work(self, block):
         block.nonce = 0
         computed_hash = block.compute_hash()
-        while not computed_hash.startswith('0' * Blockchain.MetaFormat.DIFFICULTY):
+        while not computed_hash.startswith('0' * DIFFICULTY):
             block.nonce += 1
             computed_hash = block.compute_hash()
         return computed_hash
@@ -57,7 +59,7 @@ class Blockchain:
         return True
     
     def is_valid_proof(self, block, block_hash):
-        return (block_hash.startswith('0' * Blockchain.MetaFormat.DIFFICULTY) and
+        return (block_hash.startswith('0' * DIFFICULTY) and
                 block_hash == block.compute_hash())
 
     def add_new_transaction(self, transaction):
