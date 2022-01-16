@@ -4,8 +4,6 @@
 
 </p>
 
-<h1 align="center">Blockchain based service wrapper</h1>
-
 <div align="center">
 A wrapper built around django. 
 </div>
@@ -40,26 +38,52 @@ Ginop provides a wrapper around a proof of work chain and public-chain connector
 pipenv install .
 ```
 
+## 🕹️ Running test
 
-## 🔨 Usage (Coming soon...)
+```python
+pipenv run pytest tests/
+```
 
-- Coming soon...
+## 🧃 Starting api
+
+```python
+python3 manage.py runserver
+```
+
+## 📵 Making migrations
+
+```python
+python3 manage.py makemigrations && python3 manage.py migrate
+```
+
+
+## 🔨 Usage
+
+- The ginop API is a service built on top of a proof of work blockchain. This is still in development but will serve as a platform for building services over your own private chain, or over well-known public chains like etherium and more. To use the public chain connectors you need to install [Ganache](https://trufflesuite.com/docs/ganache/overview) provided by the truffle framework. Here you can connect directly to the truffle framework and write smart contracts, manage blocks and create transactions. 
 
 ## On Chain Platform 
 Ginop provides in memory blockchain for saftey and security. This decision is based on a cost effective approach to implementing smart contract verification. The onChain approach to web3 workflow will allow self service into your own private chain. This original idea is based on proof of work and will expand deeper into other implementations such as geospatial, sms, and biometric based proof of concepts.
 
-#### 📱 API (Coming Soon...)
+#### 📱 API
 
-- Our smart contracts will govern our endpoints allowing for new workflows to progress overtime.
+- The API's will be available soon to review as working examples to build off of.
 
 ```python
-class UserView(viewsets.ModelViewSet):
+class PrivateChainView(APIView):
     """
-    Endpoint that allows users to be viewed or edisted
+    Example endpoint for handling actions on the private chain.
     """
-    queryset = User.objects.all().order_by('-date_joined')
-    serializer_class = UserSerializer
-    permission_classes = [permissions.IsAuthenticated]
+        
+    def get(self, request, format=None, *args, **kwargs):
+        chain_data = []
+        
+        for block in blockchain.chain:
+            chain_data.append(block.__dict__)
+        
+        context = json.dumps({"length": len(chain_data),
+                        "chain": chain_data})
+        
+        return Response(context, status=status.HTTP_200_OK)
 ```
 
 #### 🦄 Blocks
@@ -83,13 +107,15 @@ class Block:
 
 #### 👇 Smart Contract (Coming Soon...)
 
+- `dev/` folder is comprised of working scripts for the private chain, public chain providers, and on chain action handlers like writing smart contracts, governing transactions and more. The smart contracts will be written using `web3.py`.
+
 ```python
 WIP
 ```
 
-#### 🌈 Docs (Coming Soon...)
+#### 🌈 Docs
 
-- WIP
+[Docs coming soon...](usesource.app/)
 
 ## 🔗 Links
 - [Home page](https://usesource.app/)
