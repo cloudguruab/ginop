@@ -9,9 +9,6 @@ A wrapper built around django.
 </div>
 
   <p align="center">
-    <br />
-    <a href="https://github.com/cloudguruab/ginop"><strong>Docs coming soon »</strong></a>
-    <br />
   <br/>
     <a href="https://github.com/cloudguruab/ginop/issues">Report Bug</a>
     ·
@@ -155,10 +152,6 @@ print('Updated contract greeting: {}'.format(
     contract.functions.greet().call()
 ))
 ```
-
-#### 🌈 Docs
-
-[Docs coming soon...](usesource.app/)
 
 ## 🔗 Links
 - [Home page](https://usesource.app/)
