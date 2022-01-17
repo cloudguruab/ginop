@@ -37,11 +37,5 @@ class PrivateChainView(APIView):
         
         return Response(context, status=status.HTTP_200_OK)
 
-class PublicChainView(APIView):
-    """
-    Endpoint for example scripts usable on a public chain like etherium, gananche, or others. 
-    """
-    pass
-
 
 #write your own custom endpoints below.

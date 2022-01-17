@@ -26,14 +26,7 @@ class ChainTypes:
     """
     unconfirmed_transactions: list
     chain: list
-    
-class PrivateTypes:
-    """
-    configuration for private chain 
-
-    """
-    pass
-    
+   
 class ControllerTypes:
     """
     configuration for Controller

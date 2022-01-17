@@ -9,13 +9,5 @@ class Config(object):
     PROD_SECRET_KEY = os.environ.get('PROD_SECRET_KEY')
     
     DATABASE = os.environ.get('DATABASE')
-    
-    # PATH = 
-    
-    SIGNATURE = None
-    
-    GANACHE_URL = None 
-    
-    ONCHAIN_PRIVATE_KEY = None
-    
-    SQLALCHEMY_TRACK_MODIFICATIONS = False
+        
+    #assign new variables here

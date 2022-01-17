@@ -4,3 +4,5 @@ import os
 
 class MetaFormat(Enum):
     HTTP_PROVIDER = Web3(Web3.HTTPProvider(os.environ.get('ON_CHAIN_URL')))
+    
+    #add custom providers below

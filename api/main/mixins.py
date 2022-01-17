@@ -5,6 +5,9 @@ from ..dev.common import constants
 from ..dev.common import exceptions
 from ..dev.common import chainTypes
 
+#reusable handlers below, customize to your 
+#liking to handle different actions on the blockchain.
+
 class GinopBlockchainMixin(object):
     
     def begin_work(self, *args, **kwargs):
